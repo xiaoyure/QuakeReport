@@ -6,17 +6,19 @@ package com.example.android.quakereport;
 
 public class Earthquake {
 
-    private String mMagnitude;
+    private double mMagnitude;
     private String mLocation;
-    private String mDate;
+    private long mTimeInMilliseconds;
+    private String mUrl;
 
-    Earthquake(String magnitude, String location, String date) {
+    Earthquake(double magnitude, String location, long timeInMilliseconds, String url) {
         mMagnitude = magnitude;
         mLocation = location;
-        mDate = date;
+        mTimeInMilliseconds = timeInMilliseconds;
+        mUrl = url;
     }
 
-    public String getmMagnitude() {
+    public double getmMagnitude() {
         return mMagnitude;
     }
 
@@ -24,7 +26,12 @@ public class Earthquake {
         return mLocation;
     }
 
-    public String getmDate() {
-        return mDate;
+    public long getmTimeInMilliseconds() {
+        return mTimeInMilliseconds;
     }
+    //返回用于查找关于地震的更多信息的网站 URL
+    public String getmUrl() {
+        return mUrl;
+    }
+
 }
